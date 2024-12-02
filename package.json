@@ -4,10 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w & gunicorn app:APP -w 6 -b 0.0.0.0:5000 --reload",
-    "svelte": "rollup -c -w",
-    "start": "sirv public --no-clear",
     "mysql:new": "npx dbmate -d \"mysql\" -e \"DB_MYSQL\" new ",
     "mysql:up": "npx dbmate -d \"mysql\" -e \"DB_MYSQL\" up",
     "mysql:rollback": "npx dbmate -d \"mysql\" -e \"DB_MYSQL\" rollback",
