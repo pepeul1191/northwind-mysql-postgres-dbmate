@@ -6,12 +6,8 @@
 
 Archivo <b>.env</b>
 
-DB="sqlite:///db/demo.db"
-ENV="local"||"server"
-MAIL_PORT=465
-MAIL_USER="xyz@gmail.com"
-MAIL_PASS="asdfas"
-MAIL_HOST="smtp.google.com"
+DB_MYSQL="mysql://root:root_password@127.0.0.1:3310/Mart_OLAP_Norhtwind"
+DB_PG="postgres://myuser:mypassword@127.0.0.1:5433/Mart_OLAP_Norhtwind?sslmode=disable"
 
 ### Dockers
 
