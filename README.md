@@ -13,6 +13,53 @@ MAIL_USER="xyz@gmail.com"
 MAIL_PASS="asdfas"
 MAIL_HOST="smtp.google.com"
 
+### Dockers
+
+MySQL <b>docker-compose.yml</b>
+
+```yml
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0  # Puedes usar otra versión si lo prefieres
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password    # Cambia por una contraseña segura
+      MYSQL_DATABASE: my_database             # Nombre de la base de datos inicial
+      MYSQL_USER: my_user                      # Nombre de usuario
+      MYSQL_PASSWORD: 123              # Contraseña del usuario
+    ports:
+      - "3310:3306"                            # Exponer el puerto para conexiones remotas
+    volumes:
+      - db_data:/var/lib/mysql                 # Persistencia de datos
+
+volumes:
+  db_data:
+```
+
+Postgres <b>docker-compose.yml</b>
+
+```yml
+version: '3.8'
+services:
+  postgres:
+    image: postgres:13  # Puedes elegir la versión que necesites
+    restart: always
+    environment:
+      POSTGRES_DB: mydatabase       # Nombre de la base de datos
+      POSTGRES_USER: myuser         # Usuario de la base de datos
+      POSTGRES_PASSWORD: mypassword # Contraseña del usuario
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistencia de datos
+    ports:
+      - "5433:5432"  # Puertos de mapeo (host:container)
+
+volumes:
+  postgres_data:
+    driver: local
+```
+
 ### Migraciones
 
 Migraciones con DBMATE - Mart_OLAP_Norhtwind - MySQL:
@@ -23,9 +70,9 @@ Migraciones con DBMATE - Mart_OLAP_Norhtwind - MySQL:
 
 Migraciones con DBMATE - Mart_OLAP_Norhtwind - Postgres:
 
-    $ npm run postgres:new <<nombre_de_migracion>>
-    $ npm run postgres:up
-    $ npm run postgres:rollback
+    $ npm run pg:new <<nombre_de_migracion>>
+    $ npm run pg:up
+    $ npm run pg:rollback
 
 ---
 
