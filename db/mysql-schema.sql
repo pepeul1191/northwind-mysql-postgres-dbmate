@@ -81,7 +81,16 @@ CREATE TABLE `Sales_Fact` (
   `LineItemFreight` decimal(19,4) NOT NULL,
   `LineItemTotal` decimal(19,4) NOT NULL,
   `RequeridDate` datetime NOT NULL,
-  PRIMARY KEY (`CustomerKey`,`TimeKey`,`EmployeeKey`,`ProductKey`,`ShipperKey`)
+  PRIMARY KEY (`CustomerKey`,`TimeKey`,`EmployeeKey`,`ProductKey`,`ShipperKey`),
+  KEY `FK_Sales_Fact_Time` (`TimeKey`),
+  KEY `FK_Sales_Fact_Employee` (`EmployeeKey`),
+  KEY `FK_Sales_Fact_Product` (`ProductKey`),
+  KEY `FK_Sales_Fact_Shipper` (`ShipperKey`),
+  CONSTRAINT `FK_Sales_Fact_Customer` FOREIGN KEY (`CustomerKey`) REFERENCES `Customer_Dim` (`CustomerKey`),
+  CONSTRAINT `FK_Sales_Fact_Employee` FOREIGN KEY (`EmployeeKey`) REFERENCES `Employee_Dim` (`EmployeeKey`),
+  CONSTRAINT `FK_Sales_Fact_Product` FOREIGN KEY (`ProductKey`) REFERENCES `Product_Dim` (`ProductKey`),
+  CONSTRAINT `FK_Sales_Fact_Shipper` FOREIGN KEY (`ShipperKey`) REFERENCES `Shipper_Dim` (`ShipperKey`),
+  CONSTRAINT `FK_Sales_Fact_Time` FOREIGN KEY (`TimeKey`) REFERENCES `Time_Dim` (`TimeKey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -158,5 +167,6 @@ INSERT INTO `schema_migrations` (version) VALUES
   ('20241202025908'),
   ('20241202025919'),
   ('20241202025943'),
-  ('20241202025951');
+  ('20241202025951'),
+  ('20241202030542');
 UNLOCK TABLES;
