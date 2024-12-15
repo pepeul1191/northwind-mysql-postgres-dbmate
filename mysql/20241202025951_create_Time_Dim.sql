@@ -10,6 +10,7 @@ CREATE TABLE `Time_Dim` (
   `WeekOfYear` int NOT NULL,
   `Month` int NOT NULL,
   `Year` int NOT NULL,
+  `OrderId` int NOT NULL,
   `TheDate` datetime NOT NULL,
   PRIMARY KEY (`TimeKey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

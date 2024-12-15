@@ -1,0 +1,9 @@
+-- migrate:up
+
+ALTER TABLE time_dim 
+MODIFY TheDate DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+-- migrate:down
+
+ALTER TABLE time_dim 
+ALTER COLUMN TheDate DROP DEFAULT;

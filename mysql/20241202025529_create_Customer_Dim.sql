@@ -2,7 +2,7 @@
 
 CREATE TABLE `Customer_Dim` (
   `CustomerKey` int NOT NULL AUTO_INCREMENT,
-  `Phone` varchar(24) NOT NULL,
+  `Phone` varchar(50) NOT NULL,
   `Fax` varchar(24) DEFAULT NULL,
   `Region` varchar(15) DEFAULT NULL,
   `PostalCode` varchar(10) DEFAULT NULL,
