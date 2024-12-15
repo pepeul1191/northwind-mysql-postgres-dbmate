@@ -1,0 +1,54 @@
+# Archivos generados automáticamente por Visual Studio
+.vs/
+*.user
+*.suo
+*.pdb
+*.exe
+*.obj
+*.dll
+*.cache
+*.ipch
+*.log
+*.tlog
+*.lastbuildstate
+
+# Carpetas temporales y de configuración
+bin/
+obj/
+Debug/
+Release/
+TestResults/
+[Content_Types].xml
+_ReSharper.Caches/
+*.DotSettings.user
+ComponentArt.Web.UI_License.txt
+
+# Archivos de construcción y dependencias
+*.ide
+*.log
+*.gnt
+*.rsp
+*.dbmdl
+*.dbproj
+*.nupkg
+
+# Archivos de paquetes SSIS generados
+*.ispac
+*.deploymentmanifest
+
+# Archivos específicos de SQL Server Data Tools (SSDT)
+*.dtsx.user
+*.dtproj.user
+*.dtproj.v11.suo
+*.mdf
+*.ldf
+
+# Archivos de configuración de SSIS no personalizados
+*.conmgr
+*.config
+*.manifest
+
+# Archivos específicos de sistemas operativos
+Thumbs.db
+Desktop.ini
+.DS_Store
